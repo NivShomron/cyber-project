@@ -1,7 +1,6 @@
 import os
 import pickle
 import socket
-# test
 import pandas as pd 
 
 from sklearn.naive_bayes import GaussianNB
