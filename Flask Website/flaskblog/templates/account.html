@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>{{ current_user.username }}</h1>
+{% if data == "1" %}
+<table class="table table-striped">
+   <thead>
+      <tr>
+         <th scope="col">Age</th>
+         <th scope="col">Gender</th>
+         <th scope="col">Country</th>
+         <th scope="col">Symptoms</th>
+         <th scope="col">Result</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>{{age}}</td>
+         <td>{{gndr}}</td>
+         <td>{{cntry}}</td>
+         <td>{{symptoms}}</td>
+         <td>{{rslt}}</td>
+      </tr>
+   </tbody>
+</table>
+<p>The Covid-19 test result you inputted +is: {{tstd}}</p>
+<p>*Note: all your information is kept private, and can not be seen by anyone else</p>
+{% else %}
+<p>You should try to get evaluated for Covid-19</p>
+{% endif %}
+{% endblock content %}

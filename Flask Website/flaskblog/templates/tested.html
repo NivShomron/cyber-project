@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<form id="calc-form" class="form-horizontal" action="" method="post" data-validate="parsley">
+   <div class="form-group">
+      <label class="col-md-4 control-label" for="tested">If you got tested, what result did you get?</label>
+      <div class="col-md-4">
+         <div class="radio">
+            <label for="tested-0">
+            <input type="radio" name="tested" id="tested-0" value="0" checked="checked">
+            Negative
+            </label>
+         </div>
+         <div class="radio">
+            <label for="tested-1">
+            <input type="radio" name="tested" id="tested-1" value="1">
+            Positive
+            </label>
+         </div>
+      </div>
+   </div>
+   <div class="row col-md-offset-4 col-md-4">
+      <button type="submit" class="btn btn-block btn-lg btn-primary" href="home">Input</button>
+   </div>
+</form>
+{% else %}
+<h4>In order to view this page, you need to<a class="ml-2" href="{{ url_for('login') }}">Log In</a></h4>
+{% endif %}
+{% endblock content %}
